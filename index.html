@@ -11,40 +11,48 @@
 
 
 
-    <!--Create Nav Bar-->
-    <nav class="navbar navbar-dark bg-dark text-light">
-        <h1>Weather-Dashboard</h1>
+<!--Create Nav Bar-->
+    <nav class="navbar justify-content-center navbar-dark bg-dark text-light">
+         <h1>Weather-Dashboard</h1>
     </nav>
-    <div class="row">
+    
+    
+        <div class="row">
+          <div class="col-sm-4">
+            <form id="cityInputForm">
+                <input type="text" id="cityLocation" placeholder="New York, NY"/>
+                <button type="submit" class="btn btn-primary" id="cityInputButton">Search</button>                
+            </form>
+
+            <ul class="list-group-item col-8">Saved City</ul>
+          </div>
 
 
-    <!--Create Search Input Form for City-->
-        <div class="col-md-3 col-12 left-side row">
+          <div class="col-sm-8">col-sm-4</div>
+        </div>
+        
+<!--Create Search Input Form for City-->
+    <container class="col-lg-4 col-8 left-side row">
+        <div class="row">
+        <div class="col-12">
+            
+        </div>
 
-    <!--Create Div Form for Saved Cities-->
-            <div class="col-12">
-                <h3>Search for a City:</h3>
-                <form id="cityInputForm">
-                    <input type="text" id="cityLocation" placeholder="New York, NY"/>
-                    <button type="submit" class="btn btn-primary" id="cityInputButton">Search</button>
-                </form>
+<!--Create Div Form for Saved Cities-->
+        
+    
 
-
-
-
-
-
-            </div>
-
-
-    <!--Create Div for Current City Weather-->
+<!--Create Div for Current City Weather-->
+        
+            
+        
 
 
-    <!--Create Cards for 5 Day Forecast-->
+<!--Create Cards for 5 Day Forecast-->
 
 
     
-
+    </container>
 
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
