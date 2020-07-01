@@ -4,7 +4,7 @@ $(document).ready(function() {
     //API Key
     const appID = "de153e330cd6475e4d72b5a0d24f06ce";
 
-    //Search Button for City
+    //Search Button function for City Search
     $(".btn btn-primary").click(function(){
         let query_param = $(this).prev().val();
 
@@ -12,7 +12,7 @@ $(document).ready(function() {
         ($(this).prev().attr("placeholder") == "City") {
           let weather = "api.openweathermap.org/data/2.5/weather?q={city name},{state code}&appid=" + query_param + "&APPID=" + appID;
       }
-
+        //Load json data from api
         $.getJSON(weather,function(json){
             $("#city").html(json.name);
             $("#temperature").html(json.main.temp);
