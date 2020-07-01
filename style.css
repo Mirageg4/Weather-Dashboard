@@ -8,6 +8,13 @@
     
 }
 
+.colb{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffffff;
+}
 
 .row{
     padding-left: 10px;
