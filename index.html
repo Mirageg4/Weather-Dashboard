@@ -14,7 +14,7 @@
          <h1>Weather-Dashboard</h1>
     </nav>
     
-    
+        <!--Create Search Input Form for City & Saved Cities-->
         <div class="row">
             <div class="col-sm-4">
                 <div class="col px-md-5">
@@ -22,54 +22,44 @@
                         <input type="text" id="cityLocation" placeholder="New York, NY"/>
                         <button type="submit" class="btn btn-primary" id="cityInputButton">Search</button>                
                     </form>
+                    
                     <br>
 
                     <ul class="list-group-item col-8">Saved City</ul>
                 </div>
             </div>
-        
 
-
-          
-        
-            <!--Create Search Input Form for City-->
-                <container class="col-lg-4 col-8 left-side row">
+                <!--Create Div for Current City Weather-->
+                <container class="col-lg-8 col-4">
                     <div class="row">
-                        <div class="col-12"> 
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>City: <span id="city"></span></h4>
+                                    <p>Temperature: <span id="temperature"></span></p>
+                                    <p>Humidity: <span id="humidity"></span></p>
+                                    <p>Wind Speed: <span id="wind speed"></span></p>
+                                    <p>UV Index: <span id="uvIndex"></span><img id="uv_image" src=""></p>
+                                </div>  
+                            </div> 
                         </div>
                     </div>
 
-            <!--Create Div Form for Saved Cities-->
-        
-
-
-
-
-            <!--Create Div for Current City Weather-->
-            <div class="col-8">
-                <div class="card">
-                    <div class="card-body">
-                        <h4>City: <span id="city"></span></h4>
-                        <p>Temperature: <span id="temperature"></span></p>
-                        <p>Humidity: <span id="humidity"></span></p>
-                        <p>Wind Speed: <span id="wind speed"></span></p>
-                        <p>UV Index: <span id="uvIndex"></span><img id="uv_image" src=""></p>
-                    </div>  
-                </div> 
-            </div>
             <!--Create Cards for 5 Day Forecast-->
-            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Header</div>
-                    <div class="card-body">
-                    <h5 class="card-title">Primary card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                
-                
-                </div>
+            
+                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Date</div>
+                        <div class="card-body">
+                            <p class="card-text">Icon Placeholder</p>
+                            <p>Temp: <span id="temperature"></span></p>
+                            <p>Humidity: <span id="humidity"></span></p>
+                        </div>                
+                    </div>   
+                </div>   
+
+
+
             </div>
-       </div>   
-
-
 
     
 
