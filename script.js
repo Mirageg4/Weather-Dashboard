@@ -54,7 +54,7 @@ $(document).ready(function () {
           .then(({
             value
           }) => $("#uvIndex").html(value))
-          function styleUVIndex(uv){
+          function styleUvIndex(uv){
             var colors;
         
             if (uv < 3) {
@@ -73,7 +73,7 @@ $(document).ready(function () {
                 colors = '#9400d3'
             }
         
-            $("#current-uv").css("background-color", colors);
+            $("#uvIndex").css("background-color", colors);
         
         }
       })
