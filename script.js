@@ -47,6 +47,7 @@ $(document).ready(function () {
         lat,
         lon
       }) => {
+        
         // #uvIndex
         // Retrieve UV index
         $.get(`https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${appID}`)
