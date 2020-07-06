@@ -55,18 +55,31 @@ $(document).ready(function () {
           }) => $("#uvIndex").html(value))
 
       })
+      // 5 Day Forecast
+        $.get(`https://api.openweathermap.org/data/2.5/forecast?q=${lat}&lon=${lon}&appid=${appID}`)
+        .then((response) => response)
+      .then((fiveDay) => {
 
+        const {
+          date,
+          icon,
+          coord
+        } = fiveDay;
+
+        const {
+          temp,
+          humidity
+        } = forecast;
+
+        
+        $("#temperature1").html(temp);
+        $("#humidity1").html(humidity);
+        
+      })
   })
 
   // Code for temperature conversion
   let fahrenheit = true;
-
-  $("#convertToCelsius").click(function () {
-    if (fahrenheit) {
-      $("#temperature").text(((($("#temperature").text() - 32) * 5) / 9));
-    }
-    fahrenheit = false;
-  });
 
   $("#convertToFahrenheit").click(function () {
     if (fahrenheit == false) {
