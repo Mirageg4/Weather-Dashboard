@@ -62,19 +62,20 @@ $(document).ready(function () {
 
         const {
           name,
-          date1,
-          icon,
+          date5,
+          img5,
           coord
         } = fiveDay;
 
         const {
-          temp1,
-          humidity1
+          temp5,
+          humidity5
         } = forecast;
 
-        $("#date1").html(date1);
-        $("#temperature1").html(temp1);
-        $("#humidity1").html(humidity1);
+        $("#date5").html(date5);
+        $("#img5").html(img5);
+        $("#temp5").html(temp5);
+        $("#humidity5").html(humidity5);
         
         return coord;
       })
