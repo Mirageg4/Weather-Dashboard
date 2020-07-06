@@ -53,7 +53,28 @@ $(document).ready(function () {
           .then(({
             value
           }) => $("#uvIndex").html(value))
-
+          function styleUVIndex(uv){
+            var colors;
+        
+            if (uv < 3) {
+              colors = '#458b00';
+            }
+            else if (uv < 6) {
+                colors = '#ffd700';
+            }
+            else if (uv < 8) {
+                colors = '#ee7600'
+            }
+            else if (uv < 11) {
+                colors = '#cd2626'
+            }
+            else {
+                colors = '#9400d3'
+            }
+        
+            $("#current-uv").css("background-color", colors);
+        
+        }
       })
       // 5 Day Forecast
         $.get(`https://api.openweathermap.org/data/2.5/forecast?q=${lat}&lon=${lon}&appid=${appID}`)
