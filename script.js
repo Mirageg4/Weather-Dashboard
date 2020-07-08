@@ -42,9 +42,17 @@ $(document).ready(function () {
         // #uvIndex
         // Retrieve UV index
         $.get(
-          "https://api.openweathermap.org/data/2.5/uvi?lat=${lat}&lon=${lon}&appid=${appID}")
-        .then(({ value }) => $("#uvIndex").html(value));
-        function styleUvIndex(uv) {
+          `https://api.openweathermap.org/data/2.5/uvi?q=${query_param}&appid=${appID}`
+        )
+          .then((response) => response)
+          .then((uvIndex) => {
+            const {uv} = uvIndex;
+
+            $("#UV Index").html(uvIndex);
+          
+        })
+
+        function uvColor(uvIndex) {
           var colors;
 
           if (uv < 3) {
@@ -61,16 +69,15 @@ $(document).ready(function () {
 
           $("#uvIndex").css("background-color", colors);
         }
-      });
+      })
       
     // 5 Day Forecast
     $.get(
-      "https://api.openweathermap.org/data/2.5/forecast?q=${lat}&lon=${lon}&appid=${appID}"
+      `https://api.openweathermap.org/data/2.5/forecast?q=${query_param}&appid=${appID}`
     )
       .then((response) => response)
       .then((fiveDay) => {
-        const {list
-        } = fiveDay;
+        const {list} = fiveDay;
 
         const sliceArray = list.slice(0,5);
       })
