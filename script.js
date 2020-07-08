@@ -46,7 +46,7 @@ $(document).ready(function () {
         )
           .then((response) => response)
           .then((uvIndex) => {
-            const {uv} = uvIndex;
+            const { value } = uvIndex;
 
             $("#UV Index").html(uvIndex);
           
@@ -55,7 +55,7 @@ $(document).ready(function () {
         function uvColor(uvIndex) {
           var colors;
 
-          if (uv < 3) {
+          if (uvColor < 3) {
             colors = "#458b00";
           } else if (uv < 6) {
             colors = "#ffd700";
