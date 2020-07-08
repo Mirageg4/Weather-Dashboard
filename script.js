@@ -18,7 +18,7 @@ $(document).ready(function () {
     console.log(`You are searching for the weather of city ${query_param}`);
     $.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${query_param}&appid=${appID}`
-    )
+      )
       .then((response) => response)
       .then((weatherData) => {
         const { name, main, weather, wind, coord } = weatherData;
@@ -28,8 +28,8 @@ $(document).ready(function () {
         $("#city").html(name);
         const convertedTemp = (parseFloat(temp) - 273.15) * (9 / 5) + 32;
         $("#temperature").html(`${convertedTemp.toFixed(1)} °F`);
-        $("#humidity").html(humidity);
-        $("#wind-speed").html(wind.speed);
+        $("#humidity").html(humidity + " %");
+        $("#wind-speed").html(wind.speed + " mph");
 
         $("#weather_image").attr(
           "src",
