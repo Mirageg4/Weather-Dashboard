@@ -21,6 +21,7 @@ $(document).ready(function () {
       )
       .then((response) => response)
       .then((weatherData) => {
+        console.log(weatherData);
         const { name, main, weather, wind, coord } = weatherData;
 
         const { temp, humidity } = main;
@@ -42,20 +43,21 @@ $(document).ready(function () {
         // #uvIndex
         // Retrieve UV index
         $.get(
-          `https://api.openweathermap.org/data/2.5/uvi?q=${query_param}&appid=${appID}`
+          `http://api.openweathermap.org/data/2.5/uvi?appid=${appID}&lat=${lat}&lon=${lon}`
         )
           .then((response) => response)
           .then((uvIndex) => {
             const { value } = uvIndex;
-
-            $("#UV Index").html(uvIndex);
+console.log(uvIndex);
+            $("#uvIndex").html(value);
+            uvColor(value);
           
         })
 
-        function uvColor(uvIndex) {
+        function uvColor(uv) {
           var colors;
 
-          if (uvColor < 3) {
+          if (uv < 3) {
             colors = "#458b00";
           } else if (uv < 6) {
             colors = "#ffd700";
@@ -68,6 +70,7 @@ $(document).ready(function () {
           }
 
           $("#uvIndex").css("background-color", colors);
+          
         }
       })
       
@@ -79,7 +82,31 @@ $(document).ready(function () {
       .then((fiveDay) => {
         const {list} = fiveDay;
 
+       
         const sliceArray = list.slice(0,5);
+        console.log(sliceArray);
+
+        for(const dayForecast of sliceArray){
+          const { dt, main:{temp, humidity} } =dayForecast
+          const convertedTemp = ((parseFloat(temp) - 273.15) * (9 / 5) + 32).toFixed(1);
+          const date = new Date(dt * 1000).toLocaleDateString()
+          console.log(date, convertedTemp, humidity);
+
+          const cardTemplate =`<div class="card col">
+          <div class= "fiveDay" value= "1" >
+              <div class="date5">Date:${date}</div>
+              <br>
+              <img class="5Day-img">
+              <br>
+              <div class="temp5">Temp:${convertedTemp}</div>
+              <br>
+              <div class="humidity5">Humidity:${humidity}</div>
+          </div>
+      </div>`
+
+      // TO DO: Append the card template to forecast container
+        }
+
       })
     })
   });
