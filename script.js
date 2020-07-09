@@ -64,7 +64,7 @@ console.log(uvIndex);
           } else if (uv < 8) {
             colors = "#ee7600";
           } else if (uv < 11) {
-            colors = "#cd2626";
+            colors = "#ff4040";
           } else {
             colors = "#9400d3";
           }
@@ -92,20 +92,37 @@ console.log(uvIndex);
           const date = new Date(dt * 1000).toLocaleDateString()
           console.log(date, convertedTemp, humidity);
 
-          const cardTemplate =`<div class="card col">
-          <div class= "fiveDay" value= "1" >
-              <div class="date5">Date:${date}</div>
+          const cardTemplate =`<div class="row card col-3">
+          <div class= "fiveDay">
+              <div class="date5">Date:&nbsp${date}</div>
               <br>
-              <img class="5Day-img">
+              <img class="5Day-img"><img src=" " alt=" ">
               <br>
-              <div class="temp5">Temp:${convertedTemp}</div>
+              <div class="temp5">Temp:&nbsp${convertedTemp}&nbsp°F</div>
               <br>
-              <div class="humidity5">Humidity:${humidity}</div>
+              <div class="humidity5">Humidity:&nbsp${humidity}&nbsp%</div>
           </div>
       </div>`
 
       // TO DO: Append the card template to forecast container
+
+      $('#forecast').append(cardTemplate);
+      for(let i=1; i <= 5; i++){
+        let cardTemplate = function(i){
+          return(cardTemplate);
         }
+      }
+        
+
+      //$('#forecast').append('<div id="forecast'+i+'">text</div>');
+
+        }
+
+        
+      
+      
+
+
 
       })
     })
