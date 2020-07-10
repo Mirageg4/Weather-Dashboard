@@ -107,23 +107,13 @@ console.log(uvIndex);
       // TO DO: Append the card template to forecast container
 
       $('#forecast').append(cardTemplate);
-      for(let i=1; i <= 5; i++){
-        let cardTemplate = function(i){
+      
+      for(let i=0; i < date; i++){
+        let cardTemplate = function(){
           return(cardTemplate);
         }
       }
-        
-
-      //$('#forecast').append('<div id="forecast'+i+'">text</div>');
-
-        }
-
-        
-      
-      
-
-
-
-      })
-    })
-  });
+    }
+  })
+  })
+});
