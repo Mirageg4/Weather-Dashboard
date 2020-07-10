@@ -108,8 +108,8 @@ console.log(uvIndex);
 
       $('#forecast').append(cardTemplate);
       
-      for(let i=0; i < date; i++){
-        let cardTemplate = function(){
+      for(let i=0; i < date.i; i++){
+        let cardTemplate = function(i){
           return(cardTemplate);
         }
       }
