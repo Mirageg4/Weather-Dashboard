@@ -25,18 +25,20 @@ $(document).ready(function () {
         const { name, main, weather, wind, coord } = weatherData;
 
         const { temp, humidity } = main;
+        
 
         $("#city").html(name);
         const convertedTemp = (parseFloat(temp) - 273.15) * (9 / 5) + 32;
         $("#temperature").html(`${convertedTemp.toFixed(1)} °F`);
         $("#humidity").html(humidity + " %");
         $("#wind-speed").html(wind.speed + " mph");
-
+        
         $("#weather_image").attr(
           "src",
-          "http://openweathermap.org/img/w/" + weather[0].icon + " .png"
-        );
+          `http://openweathermap.org/img/w/${weather[0].icon}.png`
 
+        );
+          
         return coord;
       })
       .then(({ lat, lon }) => {
@@ -48,7 +50,7 @@ $(document).ready(function () {
           .then((response) => response)
           .then((uvIndex) => {
             const { value } = uvIndex;
-console.log(uvIndex);
+          console.log(uvIndex);
             $("#uvIndex").html(value);
             uvColor(value);
           
@@ -84,23 +86,24 @@ console.log(uvIndex);
 
        const renderedDays = [];
         
-
         for(const dayForecast of list){
-          const { dt, icon, main:{temp, humidity} } =dayForecast
+          const { dt, main:{temp, humidity}, weather:{[0]:icon}} =dayForecast
           const day = new Date(dt * 1000).getDate()
           if (renderedDays.includes(day)) continue
           else renderedDays.push(day)
           const convertedTemp = ((parseFloat(temp) - 273.15) * (9 / 5) + 32).toFixed(1);
           const date = new Date(dt * 1000).toLocaleDateString()
+          
+          //const icon = dayForecast.weather[0].icon;
+          //const iconUrl = 'http://openweathermap.org/img/w/" + dayForecast:weather[0].icon + ".png';
 
-
-          console.log(date, convertedTemp, humidity);
+          console.log(date, convertedTemp, humidity, icon);
 
           const cardTemplate =`<div class="row card col-3">
           <div class= "fiveDay">
               <div class="date5">Date:&nbsp${date}</div>
               <br>
-              <img class="5Day-img"><img src=" " alt=" ">
+              <img class="5Day-img"><img src=${icon}</div>
               <br>
               <div class="temp5">Temp:&nbsp${convertedTemp}&nbsp°F</div>
               <br>
@@ -112,9 +115,6 @@ console.log(uvIndex);
 
 
       $('#forecast').append(cardTemplate);
-      
-      //http://openweathermap.org/img/wn/10d@2x.png
-        
   
          
         }   
