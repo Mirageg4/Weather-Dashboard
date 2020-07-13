@@ -82,14 +82,18 @@ console.log(uvIndex);
       .then((fiveDay) => {
         const {list} = fiveDay;
 
-       
-        const sliceArray = list.slice(0,5);
-        console.log(sliceArray);
+       const renderedDays = [];
+        
 
-        for(const dayForecast of sliceArray){
-          const { dt, main:{temp, humidity} } =dayForecast
+        for(const dayForecast of list){
+          const { dt, icon, main:{temp, humidity} } =dayForecast
+          const day = new Date(dt * 1000).getDate()
+          if (renderedDays.includes(day)) continue
+          else renderedDays.push(day)
           const convertedTemp = ((parseFloat(temp) - 273.15) * (9 / 5) + 32).toFixed(1);
           const date = new Date(dt * 1000).toLocaleDateString()
+
+
           console.log(date, convertedTemp, humidity);
 
           const cardTemplate =`<div class="row card col-3">
@@ -108,14 +112,11 @@ console.log(uvIndex);
 
 
       $('#forecast').append(cardTemplate);
-      for(let i=0; i < 8; i++){
-        let date = function(){
       
-      //date.indexOf(dt_txt ="12:00:00"));
-      
+      //http://openweathermap.org/img/wn/10d@2x.png
         
-          }
-         }
+  
+         
         }   
     });
   })
