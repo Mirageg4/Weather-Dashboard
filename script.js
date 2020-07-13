@@ -108,13 +108,15 @@ console.log(uvIndex);
 
 
       $('#forecast').append(cardTemplate);
+      for(let i=0; i < 8; i++){
+        let date = function(){
       
-      //console.log(date.indexOf(dt_txt ="12:00:00"));
+      //date.indexOf(dt_txt ="12:00:00"));
       
         
-        
-      
-        } 
-        });
+          }
+         }
+        }   
+    });
   })
 });
