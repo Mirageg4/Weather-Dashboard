@@ -34,7 +34,7 @@ $(document).ready(function () {
 
         $("#weather_image").attr(
           "src",
-          "http://openweathermap.org/img/w/" + weather[0].icon + ".png"
+          "http://openweathermap.org/img/w/" + weather[0].icon + " .png"
         );
 
         return coord;
@@ -106,14 +106,15 @@ console.log(uvIndex);
 
       // TO DO: Append the card template to forecast container
 
+
       $('#forecast').append(cardTemplate);
       
-      for(let i=0; i < date[i]; i++){
-        let cardTemplate = function(i){
-          return(cardTemplate);
-        }
-      }
-    }
-  })
+      //console.log(date.indexOf(dt_txt ="12:00:00"));
+      
+        
+        
+      
+        } 
+        });
   })
 });
