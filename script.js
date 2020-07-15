@@ -87,7 +87,7 @@ $(document).ready(function () {
        const renderedDays = [];
         
        //const icons = {weather:[0].icon}
-       const {0: {id}} = icons
+       //const {0: {id}} = icons
        //const icons = {weather:{0:icon}};
        //const {weather:{0:icon}} = icons
        
