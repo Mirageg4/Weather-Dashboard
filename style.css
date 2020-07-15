@@ -24,6 +24,8 @@
    margin: 10px;
 }
 .fiveDay {
+    display: flex;
+    flex-direction: row;
     font-size: 14px;
     background-color: #1f6fe6ee;
     color:#ffffff;
