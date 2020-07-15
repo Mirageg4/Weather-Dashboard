@@ -85,25 +85,31 @@ $(document).ready(function () {
         const {list} = fiveDay;
 
        const renderedDays = [];
+       const icons = weather[0].icon
+       //const icons = ['weather','0','id'];
         
         for(const dayForecast of list){
-          const { dt, main:{temp, humidity}, weather:{[0]:icon}} =dayForecast
+          const { dt, main:{temp, humidity, weather:{icons}}} = dayForecast
+          
+          //const { dt, main:{temp, humidity}, weather:{icons}} =dayForecast
+          //const { dt, main:{temp, humidity}, weather:{[0]:icon}} =dayForecast
+
           const day = new Date(dt * 1000).getDate()
           if (renderedDays.includes(day)) continue
           else renderedDays.push(day)
           const convertedTemp = ((parseFloat(temp) - 273.15) * (9 / 5) + 32).toFixed(1);
           const date = new Date(dt * 1000).toLocaleDateString()
           
-          //const icon = dayForecast.weather[0].icon;
+          //const icons = dayForecast.weather[0].icon;
           //const iconUrl = 'http://openweathermap.org/img/w/" + dayForecast:weather[0].icon + ".png';
 
-          console.log(date, convertedTemp, humidity, icon);
+          console.log(date, convertedTemp, humidity, icons);
 
           const cardTemplate =`<div class="row card col-3">
           <div class= "fiveDay">
               <div class="date5">Date:&nbsp${date}</div>
               <br>
-              <img class="5Day-img"><img src=${icon}</div>
+              <img class="5Day-img"><img src=${icons}</div>
               <br>
               <div class="temp5">Temp:&nbsp${convertedTemp}&nbsp°F</div>
               <br>
