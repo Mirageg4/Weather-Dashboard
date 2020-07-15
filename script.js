@@ -85,23 +85,23 @@ $(document).ready(function () {
         const {list} = fiveDay;
 
        const renderedDays = [];
-       const icons = weather[0].icon
-       //const icons = ['weather','0','id'];
         
+       //const icons = {weather:[0].icon}
+       const {0: {id}} = icons
+       //const icons = {weather:{0:icon}};
+       //const {weather:{0:icon}} = icons
+       
+
         for(const dayForecast of list){
           const { dt, main:{temp, humidity, weather:{icons}}} = dayForecast
-          
+          //const { dt, main:{temp, humidity, weather: [], icons}} = dayForecast
           //const { dt, main:{temp, humidity}, weather:{icons}} =dayForecast
-          //const { dt, main:{temp, humidity}, weather:{[0]:icon}} =dayForecast
 
           const day = new Date(dt * 1000).getDate()
           if (renderedDays.includes(day)) continue
           else renderedDays.push(day)
           const convertedTemp = ((parseFloat(temp) - 273.15) * (9 / 5) + 32).toFixed(1);
           const date = new Date(dt * 1000).toLocaleDateString()
-          
-          //const icons = dayForecast.weather[0].icon;
-          //const iconUrl = 'http://openweathermap.org/img/w/" + dayForecast:weather[0].icon + ".png';
 
           console.log(date, convertedTemp, humidity, icons);
 
