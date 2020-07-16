@@ -17,6 +17,7 @@ $(document).ready(function () {
   // Bind a click event to a saved city list item which calls the API with that city
   $(".saved-city-item").click(function (e) {
     const cityName = $(this).text()
+    e();
 
     // TODO - Call the API
 
@@ -157,8 +158,9 @@ $(document).ready(function () {
           console.log(date, convertedTemp, humidity, icon);
 
           //Create Five Day Forecast card template
-          const cardTemplate = `<div class="row card col-3">
+          const cardTemplate = `<div class="row card col-2">
           <div class= "fiveDay">
+          <div class= "row">
               <div class="date5">Date:&nbsp${date}</div>
               <br>
               <div class="5Day-img"><img src="http://openweathermap.org/img/w/${icon}.png"</div>
@@ -169,7 +171,7 @@ $(document).ready(function () {
           </div>
       </div>`
 
-          // TO DO: Append the card template to forecast container
+          //Append the card template to forecast container
 
           $('#forecast').append(cardTemplate);
 

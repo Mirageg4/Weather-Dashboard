@@ -16,19 +16,29 @@
 }
 
 .row{
-    padding-left: 5px;
-    
+    display: flex;
+    position: relative;
+    width: auto;
+    margin: 2px;
+    padding: 2px;
+    border: 2px;
 }
 
 .card {
-   margin: 10px;
+   margin: 2px;
+   
 }
+#forecast {
+    display: inline-flex;
+    width: auto;
+  }
+
 .fiveDay {
-    display: flex;
-    flex-direction: row;
     font-size: 14px;
     background-color: #1f6fe6ee;
     color:#ffffff;
-    padding: 5px;
-    border-radius: 10px;
+    padding: 2px;
+    margin: 2px;
+    border-radius: 5px;
 }
+
