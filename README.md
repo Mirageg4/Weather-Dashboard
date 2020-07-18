@@ -20,7 +20,7 @@
 <p>Live Link: <a href="https://mirageg4.github.io/Weather-Dashboard/.">Weather Dashboard</a></p>
 <p>Github: <a href="https://github.com/Mirageg4/Weather-Dashboard/.">Weather Dashboard Repo</a></p>
 <hr>
-<img src ="./screenShot.png"/>
+<img src ="ScreenShot.png"/>
 <hr>              
 <p>License: Project is licensed under the MIT License. 
 See <a href ="LICENSE.md">LICENSE</a> file for details.
