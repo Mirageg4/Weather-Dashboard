@@ -17,7 +17,7 @@
 <h2>Pull Requests welcome for contribution</h2>
 <hr>
 <p>John Manouse</p>
-<p>Live Link: <a href="https://mirageg4.github.io/Weather-Dashboard/.">Weather Dashboard</a></p>
+<p>Live Link: <a href="https://mirageg4.github.io/Weather-Dashboard/">Weather Dashboard</a></p>
 <p>Github: <a href="https://github.com/Mirageg4/Weather-Dashboard/.">Weather Dashboard Repo</a></p>
 <hr>
 <img src ="ScreenShot.png"/>
